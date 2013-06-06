@@ -1,14 +1,15 @@
 Summary:	Userspace driver for the Mellanox ConnectX InfiniBand HCAs
 Summary(pl.UTF-8):	Sterownik przestrzeni użytkownika dla kart Mellanox ConnectX InfiniBand HCA
 Name:		libibverbs-driver-mlx4
-Version:	1.0.4
+Version:	1.0.5
 Release:	1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	http://www.openfabrics.org/downloads/mlx4/libmlx4-%{version}.tar.gz
-# Source0-md5:	5174d176a004bd085cd8a455865b5e4b
+# Source0-md5:	1be6e25eca818093af45b33a1408465e
 URL:		http://openib.org/
-BuildRequires:	libibverbs-devel >= 1.0
+BuildRequires:	libibverbs-devel >= 1.0.3
+Requires:	libibverbs >= 1.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +33,7 @@ oparte na układzie MT25408 ConnectX poprzez sterownik jądra mlx4_ib.
 Summary:	Static version of mlx4 driver
 Summary(pl.UTF-8):	Statyczna wersja sterownika mlx4
 Group:		Development/Libraries
-Requires:	libibverbs-static
+Requires:	libibverbs-static >= 1.0.3
 
 %description static
 Static version of mlx4 driver, which may be linked directly into
@@ -46,7 +47,8 @@ w aplikację.
 %setup -q -n libmlx4-%{version}
 
 %build
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
