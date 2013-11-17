@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# dlopened by -rmav2.so name
+# dlopened by -rdmav2.so name
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libmlx4.{so,la}
 
 %clean
