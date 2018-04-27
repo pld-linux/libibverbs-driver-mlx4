@@ -1,8 +1,9 @@
+# NOTE: for version >= 17 see rdma-core.spec
 Summary:	Userspace driver for the Mellanox ConnectX InfiniBand HCAs
 Summary(pl.UTF-8):	Sterownik przestrzeni użytkownika dla kart Mellanox ConnectX InfiniBand HCA
 Name:		libibverbs-driver-mlx4
 Version:	1.2.1
-Release:	1
+Release:	1.1
 License:	BSD or GPL v2
 Group:		Libraries
 Source0:	https://www.openfabrics.org/downloads/mlx4/libmlx4-%{version}.tar.gz
